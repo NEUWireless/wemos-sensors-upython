@@ -1,12 +1,14 @@
 import machine
 
+
 class TempSensor:
     def __init__(self, scl=5, sda=4, freq=400000, address=72):
         self.addresss = address
         self.scl = scl
         self.sda = sda
         self.freq = freq
-        self.i2c = machine.I2C(freq=400000, scl=machine.Pin(5, machine.Pin.OUT), sda=machine.Pin(4))
+        self.i2c = machine.I2C(freq=400000, scl=machine.Pin(
+            5, machine.Pin.OUT), sda=machine.Pin(4))
 
     def get(self) -> float:
         # write to configure temperature register
