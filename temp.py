@@ -10,7 +10,7 @@ class TempSensor:
         self.i2c = machine.I2C(freq=400000, scl=machine.Pin(
             5, machine.Pin.OUT), sda=machine.Pin(4))
 
-    def get(self) -> float:
+    def read(self) -> float:
         # write to configure temperature register
         self.i2c.writeto(72, b'00000000')
 

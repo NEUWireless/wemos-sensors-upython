@@ -1,7 +1,7 @@
 import machine
 
 
-class ADC:
+class LightSensor:
     def __init__(self, adc=0):
         self.adc = machine.ADC(adc)
 
